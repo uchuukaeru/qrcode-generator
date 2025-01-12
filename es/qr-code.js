@@ -35,8 +35,8 @@ class QRCode extends HTMLElement {
   constructor(value, pixelsize, margin) {
     super();
     value = this.getAttribute("value") || value;
-    this.pixelsize = pixelsize;
-    this.margin = margin;
+    this.pixelsize = this.getAttribute("pixelsize") || pixelsize;
+    this.margin = this.getAttribute("margin") || margin;
     this.canvas = document.createElement("canvas");
     this.canvas.style.imageRendering = "pixelated";
     this.g = this.canvas.getContext("2d");
