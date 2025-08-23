@@ -49,6 +49,9 @@ class QRCode extends HTMLElement {
       window.addEventListener("hashchange", () => this.value = document.location.toString(), false);
     }
   }
+  /**
+   * @param {string} value
+   */
   set value(value) {
     const imgdata = encodeImageData(value, this.pixelsize, this.margin);
     this.canvas.width = this.canvas.height = imgdata.width;
